@@ -1,7 +1,7 @@
 import argparse
 import torch
 import torch.nn as nn
-from models.sn import SN
+from models.sn-csdn import SN
 from dataset import CompositionDataset
 import evaluator_ge
 from tqdm import tqdm

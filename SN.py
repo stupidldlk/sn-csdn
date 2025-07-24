@@ -186,7 +186,7 @@ class SN(nn.Module):
 
         concept = self.compose_word_embeddings(mode='train') # (n_pairs, emb_dim)
 
-        img_feat_l3, img_feat_l6, img_feat_l9, img_feat_l12, cls_token = self.feat_extractor(img1)
+        cls_token = self.feat_extractor(img1)
 
         obj_weight = self.obj_embedder(self.tot_objs)
         attr_weight = self.attr_embedder(self.tot_attrs)
@@ -248,7 +248,7 @@ class SN(nn.Module):
 
         concept = self.compose_word_embeddings(mode='val') # [n_pairs, emb_dim].
 
-        img_feat_l3, img_feat_l6, img_feat_l9, img_feat_l12, cls_token = self.feat_extractor(img)
+        cls_token = self.feat_extractor(img)
 
         obj_weight = self.obj_embedder(self.tot_objs)
         attr_weight = self.attr_embedder(self.tot_attrs)
